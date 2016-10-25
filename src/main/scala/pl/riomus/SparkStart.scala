@@ -15,7 +15,6 @@ object SparkStart extends App {
       .set("spark.app.id", "SparkStart")
     val ctx = new SparkContext(sparkConf)
 
-
     val out=ctx.parallelize((1 to 100).toSeq)
       .flatMap(_=>(1 to 100).iterator)
       .map(_*10)
